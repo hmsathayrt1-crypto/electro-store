@@ -3,7 +3,7 @@ define('DB_HOST', 'localhost');
 define('DB_NAME', 'electro_store');
 define('DB_USER', 'electro');
 define('DB_PASS', 'Electr0St0re!2026');
-define('APP_URL', 'http://electro-store.abdalgani.com');
+define('APP_URL', 'https://abdalgani.com/electro-store');
 define('DELIVERY_FEE', 500.00);
 define('CURRENCY', 'ل.س');
 
