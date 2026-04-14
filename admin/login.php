@@ -4,10 +4,10 @@ require_once __DIR__ . '/../includes/functions.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
-    $stmt = $pdo->prepare("SELECT id, name, role FROM users WHERE email = ? AND role = 'admin'");
+    $stmt = $pdo->prepare("SELECT id, name, password, role FROM users WHERE email = ? AND role = 'admin'");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
-    if ($user && password_verify($password, $user['password'] ?? '')) {
+    if ($user && password_verify($password, $user['password'])) {
         loginUser($user['id'], $user['name'], $user['role']);
         header('Location: index.php');
         exit;

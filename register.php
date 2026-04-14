@@ -22,7 +22,7 @@ async function handleRegister(e) {
     const form = new FormData(e.target);
     const res = await fetch('api/auth/register.php', {method:'POST', body: form});
     const data = await res.json();
-    if (data.success) { window.location.href = '/'; }
+    if (data.success) { window.location.href = 'index.php'; }
     else { document.getElementById('reg-msg').innerHTML = '<p class="error">'+data.error+'</p>'; }
     return false;
 }

@@ -1,7 +1,7 @@
 <?php include 'partials/header.php';
 $totalSales = $pdo->query("SELECT COALESCE(SUM(total),0) FROM orders")->fetchColumn();
 $totalOrders = $pdo->query("SELECT COUNT(*) FROM orders")->fetchColumn();
-$byStatus = $pdo->query("SELECT status, COUNT(*) as c, COALESCE(SUM(total),0) as s FROM orders GROUP BY status")->fetchAll(PDO::FETCH_KEY_PAIR);
+$byStatus = $pdo->query("SELECT status, COUNT(*) as c FROM orders GROUP BY status")->fetchAll(PDO::FETCH_KEY_PAIR);
 $topProducts = $pdo->query("SELECT name, sales_count FROM products ORDER BY sales_count DESC LIMIT 10")->fetchAll();
 $byMethod = $pdo->query("SELECT payment_method, COUNT(*) as c FROM orders GROUP BY payment_method")->fetchAll();
 ?>

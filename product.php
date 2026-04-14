@@ -11,7 +11,7 @@ $stmt = $pdo->prepare("
 $stmt->execute([$id]);
 $product = $stmt->fetch();
 
-if (!$product) { header('Location: /'); exit; }
+if (!$product) { header('Location: index.php'); exit; }
 
 $images = $pdo->prepare("SELECT * FROM product_images WHERE product_id = ? ORDER BY sort_order");
 $images->execute([$id]);

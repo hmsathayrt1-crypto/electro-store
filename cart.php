@@ -10,7 +10,7 @@ $total = $subtotal + DELIVERY_FEE;
 
 <section class="cart-page">
     <?php if(empty($items)): ?>
-    <p class="empty">السلة فارغة — <a href="/">تصفح المنتجات</a></p>
+    <p class="empty">السلة فارغة — <a href="category.php">تصفح المنتجات</a></p>
     <?php else: ?>
     <table class="cart-table">
         <thead><tr><th>المنتج</th><th>السعر</th><th>الكمية</th><th>المجموع</th><th></th></tr></thead>

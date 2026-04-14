@@ -20,7 +20,7 @@ async function handleLogin(e) {
     const form = new FormData(e.target);
     const res = await fetch('api/auth/login.php', {method:'POST', body: form});
     const data = await res.json();
-    if (data.success) { window.location.href = data.role === 'admin' ? 'admin/' : '/'; }
+    if (data.success) { window.location.href = data.role === 'admin' ? 'admin/' : 'index.php'; }
     else { document.getElementById('login-msg').innerHTML = '<p class="error">'+data.error+'</p>'; }
     return false;
 }
